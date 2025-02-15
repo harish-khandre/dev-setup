@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+sudo apt install zsh
+
+hash -r
+
+# default zsh
+sudo chsh -s "$(which zsh)"
+
+# starship
+curl -sS https://starship.rs/install.sh | sh
+
+# zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+#atuin
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+#bun
+curl -fsSL https://bun.sh/install | bash
+
+#direnv
+sudo apt install direnv
+
+#pnpm
+npm install -g pnpm

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo apt install kitty
+sudo update-alternatives --config x-terminal-emulator
