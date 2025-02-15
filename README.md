@@ -8,5 +8,5 @@ You can pass the argument to execute specific script
 ```
 
 ```Bash
-./dev-set --dry
+./dev-run --dry
 ```
