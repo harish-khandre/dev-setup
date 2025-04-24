@@ -11,7 +11,6 @@ fi
 
 eval "$(starship init zsh)"
 
-
 export EDITOR=nvim
 
 # Set the directory we want to store zinit and plugins
@@ -45,7 +44,6 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::copybuffer
 zinit snippet OMZP::dirhistory
-zinit snippet OMZP::copyfile
 zinit snippet OMZP::vi-mode
 
 # Load completions
@@ -93,6 +91,11 @@ alias mongostart="sudo systemctl start mongod"
 alias mongostop="sudo systemctl stop mongod"
 alias checkall="bun tsc && bun lint --fix && bun format"
 alias ..='cd ..'
+alias copyfile="xclip -sel c <"
+alias doall="pnpm typecheck && pnpm lint && pnpm format"
+alias download='aria2c -x 16 -s 16 -k 1M --continue=true --max-connection-per-server=16 --split=16 --min-split-size=1M'
+alias sysmaint='sudo apt update && sudo apt --fix-broken install -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt-get autoclean -y  echo "✅ System maintenance complete."'
+
 
 # Conditional aliases
 if command -v eza &>/dev/null; then
