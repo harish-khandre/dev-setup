@@ -2,7 +2,7 @@
 export LANG=en_US.UTF-8
 
 # Base PATH setup
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:$HOME/bin/dev-env-manager/shim
 
 # Homebrew setup
 if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then
@@ -94,7 +94,10 @@ alias ..='cd ..'
 alias copyfile="xclip -sel c <"
 alias doall="pnpm typecheck && pnpm lint && pnpm format"
 alias download='aria2c -x 16 -s 16 -k 1M --continue=true --max-connection-per-server=16 --split=16 --min-split-size=1M'
-alias sysmaint='sudo apt update && sudo apt --fix-broken install -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt-get autoclean -y  echo "✅ System maintenance complete."'
+alias sysmaint='sudo apt update && sudo apt --fix-broken install -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt-get autoclean -y && echo "✅ System maintenance complete."'
+alias explorer='xdg-open .'
+alias txt='nvim ~/text.txt'
+alias testts='nvim ~/test.ts'
 
 
 # Conditional aliases
@@ -151,3 +154,12 @@ if [ -d $HOME/.atuin ]; then
 fi
 
 source "$HOME/.local/share/../bin/env"
+
+# Android SDK Tools PATH
+export ANDROID_HOME="${HOME}/Android/Sdk"
+export PATH="${ANDROID_HOME}/tools:${PATH}"
+export PATH="${ANDROID_HOME}/emulator:${PATH}"
+export PATH="${ANDROID_HOME}/platform-tools:${PATH}"
+
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH

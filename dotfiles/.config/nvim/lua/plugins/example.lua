@@ -40,6 +40,13 @@ return {
     end,
   },
 
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      popup_border_style = "NC",
+    },
+  },
+
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
